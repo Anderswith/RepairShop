@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepairShop", "RepairShop\RepairShop.csproj", "{A29BC13C-6831-4D69-A9FA-81B227B0DA79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepairShopTest", "RepairShopTest\RepairShopTest.csproj", "{988E7DAD-B343-43C9-BEC9-D251DA2C935C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A29BC13C-6831-4D69-A9FA-81B227B0DA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29BC13C-6831-4D69-A9FA-81B227B0DA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29BC13C-6831-4D69-A9FA-81B227B0DA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29BC13C-6831-4D69-A9FA-81B227B0DA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{988E7DAD-B343-43C9-BEC9-D251DA2C935C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988E7DAD-B343-43C9-BEC9-D251DA2C935C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988E7DAD-B343-43C9-BEC9-D251DA2C935C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988E7DAD-B343-43C9-BEC9-D251DA2C935C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
