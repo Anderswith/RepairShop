@@ -55,8 +55,8 @@ public class UserController : ControllerBase
         }
     }
     
-    [Authorize(Roles = "Customer,Admin,Technician")]
-    [HttpGet("{username}")]
+    [Authorize(Roles = "Admin,Technician")]
+    [HttpGet("[action]")]
     public IActionResult GetUserByUsername(string username)
     {
         var user =  _userLogic.GetUserByName(username);

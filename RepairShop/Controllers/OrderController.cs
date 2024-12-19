@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 using RepairShop.BLL.interfaces;
 
 namespace RepairShop.Controllers;
@@ -9,29 +10,35 @@ public class OrderController : ControllerBase
 {
     private readonly ILogger<OrderController> _logger;
     private readonly IOrderLogic _orderLogic;
-    private readonly ITechnicianLogic _technicianLogic;
+    private readonly IUserLogic _userLogic;
 
-    public OrderController(ILogger<OrderController> logger, IOrderLogic orderLogic, ITechnicianLogic technicianLogic)
+
+    public OrderController(ILogger<OrderController> logger, IOrderLogic orderLogic, IUserLogic userLogic  )
     {
         _logger = logger;
         _orderLogic = orderLogic;
-        _technicianLogic = technicianLogic;
+        _userLogic = userLogic;
+        
     }
     
     [Authorize(Roles = "Technician")]
     [HttpPost("[action]")]
-    public IActionResult AddOrder(Guid customerId, string itemName, string defect, string image)
+    public IActionResult AddOrder(string customerName, string itemName, string defect, string image)
     {
+        
         if (string.IsNullOrEmpty(itemName)
             || string.IsNullOrEmpty(defect)
-            || string.IsNullOrEmpty(image))
+            || string.IsNullOrEmpty(image)
+            || string.IsNullOrEmpty(customerName))
         {
             return BadRequest("Fields cannot be empty");
         }
+        var userToFind = _userLogic.GetUserByName(customerName);
+        var customerId = userToFind.UserId;
         try
         {
-            _orderLogic.AddOrder(customerId, itemName, defect, image);
-            return Ok("Order added successfully.");
+            _orderLogic.AddOrder(userToFind.UserId, itemName, defect, image);
+            return Ok(new { message = "Order added successfully." });
         }
         catch (Exception ex)
         {

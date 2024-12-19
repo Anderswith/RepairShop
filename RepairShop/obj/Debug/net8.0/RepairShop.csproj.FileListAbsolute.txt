@@ -146,3 +146,4 @@ C:\Users\Anders\RiderProjects\RepairShop\RepairShop\bin\Debug\net8.0\nunit.frame
 C:\Users\Anders\RiderProjects\RepairShop\RepairShop\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\Users\Anders\RiderProjects\RepairShop\RepairShop\bin\Debug\net8.0\MailKit.dll
 C:\Users\Anders\RiderProjects\RepairShop\RepairShop\bin\Debug\net8.0\MimeKit.dll
+C:\Users\Anders\RiderProjects\RepairShop\RepairShop\obj\Debug\net8.0\RepairShop.sourcelink.json
